@@ -5,11 +5,13 @@ const port = 3000;
 app.use(express.json());
 
 app.all("/", (req, res) => {
+  console.log("Rodando");
   res.send("Rodando");
 });
 
 // all (GET, POST, PUT, DELETE)
 app.all("/webhook", (req, res) => {
+  console.log(req.body);
   res.json(req.body);
 });
 
